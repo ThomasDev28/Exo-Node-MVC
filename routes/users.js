@@ -67,7 +67,6 @@ usersRouter.put("/:id", (req, res) => {
       res.status(200).json({ ...alreadyExistUsers, ...req.body });
     })
     .catch((err) => {
-      console.error(err);
       if (err === "RECORD_NOT_FOUND")
         res.status(404).send(`User with id ${userId} not found.`);
       if (err === "DUPLICATE_EMAIL")
